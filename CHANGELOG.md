@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+- Appearance → Workspace label: with Custom labels, the icon fields move into
+  two collapsible groups, one for the focused workspace and a grid for
+  workspaces 1-10, instead of a long scrolling list.
 - Appearance → Pill height and Pill padding: set the pill height in pixels for
   a thinner pill with bar background above and below it, and the horizontal
   padding inside each pill, with a live preview of the result. Both are 0 by

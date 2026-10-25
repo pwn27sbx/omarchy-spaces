@@ -84,6 +84,17 @@ Window {
       equal(form.cfg.pillPadding, 24)
       keyClick(Qt.Key_Home)
       equal(form.cfg.pillPadding, 0)
+      form.cfg = Model.resolveSettings({labelStyle: "custom"})
+      wait(50)
+      var workspacesHeader = find(form, "group", "workspaces")
+      workspacesHeader.clicked()
+      equal(form.labelGroup, "workspaces")
+      equal(workspacesHeader.expanded, true)
+      var activeHeader = find(form, "group", "active")
+      activeHeader.clicked()
+      equal(form.labelGroup, "active")
+      equal(workspacesHeader.expanded, false)
+      form.labelGroup = ""
       // Group headings are all the same small-caps label; a title-case heading
       // of its own would stand out from every other group.
       equal(find(form, "text", "Pill size"), null)
